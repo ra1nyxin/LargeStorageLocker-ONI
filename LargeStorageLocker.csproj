@@ -1,6 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+    <!-- The game's own assemblies (0Harmony, Assembly-CSharp) are built against .NET Framework 4.8.
+         Targeting 4.7.2 makes MSBuild refuse to resolve them (MSB3274/MSB3275), so the csproj build
+         needs 4.8 to match. build.ps1 is unaffected either way. -->
+    <TargetFramework>net48</TargetFramework>
     <AssemblyName>LargeStorageLocker</AssemblyName>
     <RootNamespace>LargeStorageLocker</RootNamespace>
     <OutputType>Library</OutputType>

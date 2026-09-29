@@ -19,6 +19,11 @@ Compatibility:
 - If another mod sets the Storage Bin capacity higher, this mod will not overwrite it.
 - Designed to be low-conflict with most mods because it does not replace building definitions or use transpilers.
 
+Stability:
+
+- Adds three narrow Harmony prefixes that make the chore system drop a stale scene partitioner entry instead of asserting on it. This covers a crash that can happen when very large amounts of material are pushed through storage filters at once.
+- These guards change no values and no game rules. If a game update moves the methods they watch, they simply do not install themselves and are reported in `Player.log`.
+
 Recommended load order:
 
 - Usually does not matter.
@@ -42,6 +47,11 @@ Large Storage Locker 会把原版储物箱的容量提高到：
 - 只有当当前储物箱容量低于本模组目标容量时，才会提高 `Storage.capacityKg`。
 - 如果其他模组已经把储物箱容量设置得更高，本模组不会覆盖它。
 - 没有替换建筑定义，也没有使用 transpiler，因此和大多数模组的冲突概率较低。
+
+稳定性说明：
+
+- 增加了三个很窄的 Harmony Prefix，让搬运系统丢弃场景分区里的残留条目，而不是直接断言失败。这覆盖了一个在极大量物质同时流经储物筛选时可能出现的崩溃。
+- 这些防护不修改任何数值，也不修改任何游戏规则。如果游戏更新挪动了它们关注的函数，它们只会不安装并把原因写进 `Player.log`，其余功能不受影响。
 
 推荐加载顺序：
 

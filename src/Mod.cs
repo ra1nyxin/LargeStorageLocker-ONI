@@ -11,6 +11,10 @@ namespace LargeStorageLocker
         {
             base.OnLoad(harmony);
             Debug.Log("[LargeStorageLocker] Loaded.");
+
+            // Installed by hand rather than by attribute: every guard resolves its target at runtime,
+            // validates the signature it is about to patch and fails open with a logged error.
+            FetchLayerGuards.Install(harmony);
         }
     }
 
