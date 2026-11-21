@@ -18,6 +18,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="tests\**\*.cs" />
     <Reference Include="0Harmony">
       <HintPath>$(OniManagedDir)\0Harmony.dll</HintPath>
       <Private>false</Private>

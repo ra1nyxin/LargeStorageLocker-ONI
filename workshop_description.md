@@ -15,6 +15,7 @@ What this mod changes:
 Compatibility:
 
 - Uses a narrow Harmony postfix on `StorageLockerConfig.ConfigureBuildingTemplate`.
+- Fixes `Storage.MassStored()` overflowing above about 2,147 t for storage buildings, including existing saves.
 - Only raises `Storage.capacityKg` if the current value is lower than this mod's target capacity.
 - If another mod sets the Storage Bin capacity higher, this mod will not overwrite it.
 - Designed to be low-conflict with most mods because it does not replace building definitions or use transpilers.
@@ -44,6 +45,7 @@ Large Storage Locker 会把原版储物箱的容量提高到：
 兼容性说明：
 
 - 使用很窄的 Harmony Postfix，补丁目标是 `StorageLockerConfig.ConfigureBuildingTemplate`。
+- 修复储存建筑的物品总质量超过约 2147 吨时发生的数值溢出，已有存档同样生效。
 - 只有当当前储物箱容量低于本模组目标容量时，才会提高 `Storage.capacityKg`。
 - 如果其他模组已经把储物箱容量设置得更高，本模组不会覆盖它。
 - 没有替换建筑定义，也没有使用 transpiler，因此和大多数模组的冲突概率较低。

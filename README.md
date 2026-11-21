@@ -12,12 +12,15 @@ Large Storage Locker is an Oxygen Not Included mod that increases the capacity o
 
 ## Compatibility
 
-The mod applies two independent sets of patches:
+The mod applies three independent sets of patches:
 
 1. A narrow Harmony postfix on `StorageLockerConfig.ConfigureBuildingTemplate` that edits only `Storage.capacityKg` on the Storage Bin prefab.
-2. The fetch layer guards described below, which change no values at all.
+2. A `Storage.MassStored()` postfix that corrects overflow when a storage contains more than about 2,147 t. It applies to all storage buildings, including existing ones, so remaining capacity and fullness checks also receive the corrected mass.
+3. The fetch layer guards described below, which change no values at all.
 
 This is intended to be compatible with most mods that do not fully replace the vanilla Storage Bin configuration.
+
+The mass fix only recalculates when the original result is negative and replaces it only if the actual mass is in the overflow range. Normal storage calls retain the original result. Large masses remain subject to the game's `float` precision.
 
 ## Fetch Layer Guards
 
